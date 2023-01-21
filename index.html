@@ -16,6 +16,23 @@
         case 3:console.log('Scissors');break;
         default: console.log('Computer is doing something very bad:/');    
     }
+
+    function playerSelection(){
+        prompt('Your weapon of choice?(capitalize it, please)', 'well..you are deadnow congrats');
+    }
+
+    function resultDeclaration(weapon1,weapon2){
+        switch(true){
+            case(weapon1=='Rock'&&weapon2=='Paper'):
+            case(weapon1=='Paper'&&weapon2=='Scissors'):
+            case(weapon1=='Scissors'&&weapon2=='Rock'):
+                console.log(`Yay!You actually won!${weapon2} beats ${weapon1}`); break;
+            case(weapon1==weapon2):
+                console.log('Oh,it`s a draw!'); break;
+            default:
+                console.log(`Oh no, you,ve lost!${weapon1} beats ${weapon2}`);
+        }
+    }
 }
 getComputerChoice();
 </script>
