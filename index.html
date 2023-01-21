@@ -10,23 +10,29 @@
 <script>
     function getComputerChoice(){
     let pick = Math.floor(Math.random()*2+2);
+    console.log(pick);
     switch (pick){
-        case 1:return('Rock'); break;
+        case 1: return('Rock'); break;
         case 2:return('Paper'); break;
         case 3:return('Scissors');break;
         default: return('Computer is doing something very bad:/');    
     }
     }
     function playerSelection(){
-        const userPick=prompt('Your weapon of choice?(capitalize it, please)');
-        return(userPick);
+        let userPick=prompt('Your weapon of choice?(capitalize it, please)');
+        userPick=userPick.toLowerCase();
+        let firstLetter=userPick.charAt(0);
+        let newLetter=firstLetter.toUpperCase();
+        const newUserPick=userPick.replace(firstLetter, newLetter);
+        return newUserPick;
+
     }
 
     const userPick='Rock';
     function resultDeclaration(weapon1,weapon2){
         switch(true){
-            case(weapon1=='Rock'&&weapon2=='Paper'):
-            case(weapon1=='Paper'&&weapon2=='Scissors'):
+            case(weapon1=='Rock' && weapon2=='Paper'):
+            case(weapon1=='Paper' && weapon2=='Scissors'):
             case(weapon1=='Scissors'&&weapon2=='Rock'):
                 console.log(`Yay!You actually won!${weapon2} beats ${weapon1}`); break;
             case(weapon1==weapon2):
