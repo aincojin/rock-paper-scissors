@@ -9,18 +9,20 @@
 <body>
 <script>
     function getComputerChoice(){
-    let pick = Math.floor(Math.random()*2+1);
+    let pick = Math.floor(Math.random()*2+2);
     switch (pick){
-        case 1: console.log('Rock'); break;
-        case 2:console.log('Paper'); break;
-        case 3:console.log('Scissors');break;
-        default: console.log('Computer is doing something very bad:/');    
+        case 1:return('Rock'); break;
+        case 2:return('Paper'); break;
+        case 3:return('Scissors');break;
+        default: return('Computer is doing something very bad:/');    
     }
-
+    }
     function playerSelection(){
-        prompt('Your weapon of choice?(capitalize it, please)', 'well..you are deadnow congrats');
+        const userPick=prompt('Your weapon of choice?(capitalize it, please)');
+        return(userPick);
     }
 
+    const userPick='Rock';
     function resultDeclaration(weapon1,weapon2){
         switch(true){
             case(weapon1=='Rock'&&weapon2=='Paper'):
@@ -33,8 +35,9 @@
                 console.log(`Oh no, you,ve lost!${weapon1} beats ${weapon2}`);
         }
     }
-}
-getComputerChoice();
+
+
+resultDeclaration(getComputerChoice(),playerSelection());
 </script>
 </body>
 </html>
