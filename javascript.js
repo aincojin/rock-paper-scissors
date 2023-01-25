@@ -1,3 +1,59 @@
+const rock = document.querySelector('#rock');
+rock.onclick=()=> {
+    var userPick = "Rock";
+    playRound(getComputerChoice(),userPick);
+};
+
+const paper = document.querySelector('#paper');
+paper.onclick=()=> {
+    var userPick = "Paper";
+    playRound(getComputerChoice(),userPick);
+};
+
+const scissors = document.querySelector('#scissors');
+scissors.onclick=()=> {
+    var userPick = "Scissors";
+    playRound(getComputerChoice(),userPick);
+};
+
+
+
+/*var userPick;
+const buttons = document.querySelectorAll('button');
+buttons.forEach((button)=>{
+    button.onclick=()=>{
+        if(button.value == 'Rock'){
+            userPick = 'Rock';
+        }else if(button.value == 'Paper'){
+            userPick = 'Paper';
+        }else if (button.value == 'Scissors'){
+            userPick = 'Scissors';
+        }else{
+            console.log('UNLUCKY');
+        }
+        playRound(getComputerChoice(),userPick);
+    }
+});
+*/
+/*button.addEventListener('click',function(e){
+var x = document.getElementById('id').value;
+    if(e.target.id == 'Rock'){
+        userPick = 'Rock';
+    }else if(e.target.id == 'Paper'){
+        userPick = 'Paper';
+    }else if (e.target.id == 'Scissors'){
+        userPick = 'Scissors';
+    }else{
+        console.log('UNLUCKY');
+    }
+    playRound(getComputerChoice(),userPick);
+});
+});*/
+
+
+
+
+
 var result;
 
     function getComputerChoice(){
@@ -11,19 +67,18 @@ var result;
     }
 
 
-    function playerSelection(){
-        let userPick=window.prompt('Your weapon of choice?(capitalize it, please)');
+    /*function playerSelection(){
+        let userPick=window.prompt('Your weapon of choice?');
         userPick=userPick.toLowerCase();
         let firstLetter=userPick.charAt(0);
         let newLetter=firstLetter.toUpperCase();
         const newUserPick=userPick.replace(firstLetter, newLetter);
         return newUserPick;
 
-    }
+    }*/
 
 
-
-    function resultDeclaration(weapon1,weapon2){
+    function playRound(weapon1,weapon2){
         switch(true){
             case(weapon1=='Rock' && weapon2=='Paper'):
             case(weapon1=='Paper' && weapon2=='Scissors'):
@@ -42,11 +97,11 @@ var result;
     }
 
 
-    function game(){
+    /*function game(){
         let sum1=0;
         let sum2=0;
         for(let i =0; i<5; i++){
-            resultDeclaration(getComputerChoice(),playerSelection())
+            playRound(getComputerChoice(),playerSelection())
             if(result==1){
                 sum2+=1;          
             }
@@ -71,4 +126,4 @@ var result;
 
 
     game();
-    
+    */
